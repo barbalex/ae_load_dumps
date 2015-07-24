@@ -1,0 +1,14 @@
+{
+  "name": "ae_load",
+  "version": "1.0.0",
+  "description": "Mit diesen Tool kann man dumps, die mit pouchdb-dump-cli erzeugt wurden, in die Couch laden. Dazu müssen die dumps in den Ordner 'dumps' gelegt werden",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "nano": "^6.1.4"
+  }
+}

@@ -73,3 +73,11 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+couchPass.json
+loads/ae_fauna.json
+loads/ae_lr.json
+loads/ae_objekte.json
+loads/ae_moose.json
+loads/ae_flora.json
+loads/ae_pilze.json
+*.txt
