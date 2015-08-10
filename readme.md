@@ -1,6 +1,3 @@
-#arteigenschaften.ch, Strukturanpassung
+Mit diesen Tool kann man dumps, die mit pouchdb-dump-cli erzeugt wurden, in die Couch laden. Dazu müssen die dumps in den Ordner 'dumps' gelegt werden.
 
-Neu ist v.a.:
-
-- Taxonomien sind für's Auge besser positioniert
-- Sie enthalten die Gruppe
+Zweck: diese Dumps mit Hilfe von pouchdb-load schnell replizieren
