@@ -14,7 +14,7 @@ var adb = nano.db.use('artendb')
 var fileList = fs.readdirSync('./dumps')
 
 function insertAttachment (file, rev, docName, fileName) {
-  adb.attachment.insert(docName, fileName, file, 'text/plain; charset=utf16le', { rev: rev }, function (error, result) {
+  adb.attachment.insert(docName, fileName, file, 'text/plain; charset=utf8', { rev: rev }, function (error, result) {
     if (error) return console.log('error inserting attachment:', error)
     console.log('result from inserting ' + fileName + ':', result)
   })
