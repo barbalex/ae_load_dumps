@@ -4,11 +4,13 @@
   "description": "Mit diesen Tool kann man dumps, die mit pouchdb-dump-cli erzeugt wurden, in die Couch laden. Dazu müssen die dumps in den Ordner 'dumps' gelegt werden",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "nano": "6.1.5"
+    "nano": "6.1.5",
+    "pouchdb": "^4.0.0",
+    "pouchdb-replication-stream": "^1.2.4"
   }
 }

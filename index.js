@@ -10,6 +10,9 @@ var couchPass = require('./couchPass.json')
 var url = 'http://' + couchPass.user + ':' + couchPass.pass + '@127.0.0.1:5984'
 var nano = require('nano')(url)
 var adb = nano.db.use('artendb')
+// var pouchReplicationStream = require('pouchdb-replication-stream')
+// var PouchDB = require('pouchdb')
+// PouchDB.plugin(replicationStream.plugin)
 
 var fileList = fs.readdirSync('./dumps')
 var counter = -5000
