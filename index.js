@@ -9,13 +9,9 @@ var fs = require('fs')
 var couchPass = require('./couchPass.json')
 var url = 'http://' + couchPass.user + ':' + couchPass.pass + '@127.0.0.1:5984'
 var nano = require('nano')(url)
-var adb = nano.db.use('artendb')
-// var pouchReplicationStream = require('pouchdb-replication-stream')
-// var PouchDB = require('pouchdb')
-// PouchDB.plugin(replicationStream.plugin)
+var adb = nano.db.use('ae')
 
 var fileList = fs.readdirSync('./dumps')
-var counter = -5000
 
 function insertAttachment (file, rev, docName, fileName) {
   adb.attachment.insert(docName, fileName, file, 'text/plain; charset=utf8', { rev: rev }, function (error, result) {
