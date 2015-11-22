@@ -31,15 +31,15 @@ function removeAttachmentThenInsert (file, rev, docName, fileName) {
 function processFile (fileName) {
   console.log('prosessing file', fileName)
   const fileUrl = './dumps/' + fileName
-  fs.readFile(fileUrl, function (error, file) {
+  fs.readFile(fileUrl, (error, file) => {
     if (error) return console.log('error getting file:', error)
     const docName = fileName.substr(0, fileName.indexOf('_'))
-    adb.get(docName, function (error, doc) {
+    adb.get(docName, (error, doc) => {
       if (error) {
         adb.insert({
           '_id': docName,
           'Typ': 'GruppeDb'
-        }, function (error, result) {
+        }, (error, result) => {
           if (error) console.log('error inserting fileName', fileName)
           insertAttachment(file, result.rev, docName, fileName)
         })
