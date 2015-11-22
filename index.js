@@ -5,13 +5,13 @@
 
 'use strict'
 
-var fs = require('fs')
-var couchPass = require('./couchPass.json')
-var url = 'http://' + couchPass.user + ':' + couchPass.pass + '@127.0.0.1:5984'
-var nano = require('nano')(url)
-var adb = nano.db.use('ae')
+const fs = require('fs')
+const couchPass = require('./couchPass.json')
+const url = 'http://' + couchPass.user + ':' + couchPass.pass + '@127.0.0.1:5984'
+const nano = require('nano')(url)
+const adb = nano.db.use('ae')
 
-var fileList = fs.readdirSync('./dumps')
+const fileList = fs.readdirSync('./dumps')
 
 function insertAttachment (file, rev, docName, fileName) {
   adb.attachment.insert(docName, fileName, file, 'text/plain; charset=utf8', { rev: rev }, function (error, result) {
@@ -30,10 +30,10 @@ function removeAttachmentThenInsert (file, rev, docName, fileName) {
 
 function processFile (fileName) {
   console.log('prosessing file', fileName)
-  var fileUrl = './dumps/' + fileName
+  const fileUrl = './dumps/' + fileName
   fs.readFile(fileUrl, function (error, file) {
     if (error) return console.log('error getting file:', error)
-    var docName = fileName.substr(0, fileName.indexOf('_'))
+    const docName = fileName.substr(0, fileName.indexOf('_'))
     adb.get(docName, function (error, doc) {
       if (error) {
         adb.insert({
@@ -55,7 +55,7 @@ function processFile (fileName) {
 }
 
 // how to get loop to tic every x milliseconds: http://brackets.clementng.me/post/24150213014/example-of-a-javascript-closure-settimeout-inside
-for (var i = 1; i <= fileList.length; i++) {
-  var fileName = fileList[i - 1]
-  setTimeout(function (fileName) { return function () { processFile(fileName) } }(fileName), 1000 * i)
+for (let i = 1; i <= fileList.length; i++) {
+  const fileName = fileList[i - 1]
+  setTimeout((function (fileName) { return function () { processFile(fileName) } }(fileName)), 1000 * i)
 }
