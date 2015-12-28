@@ -57,5 +57,8 @@ function processFile (fileName) {
 // how to get loop to tic every x milliseconds: http://brackets.clementng.me/post/24150213014/example-of-a-javascript-closure-settimeout-inside
 for (let i = 1; i <= fileList.length; i++) {
   const fileName = fileList[i - 1]
-  setTimeout((function (fileName) { return function () { processFile(fileName) } }(fileName)), 1000 * i)
+  // somehow on mac there is an invisible file .DS_Store that ghosts around...!!!
+  if (fileName !== '.DS_Store') {
+    setTimeout((function (fileName) { return function () { processFile(fileName) } }(fileName)), 1000 * i)
+  }
 }
