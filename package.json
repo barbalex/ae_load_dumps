@@ -1,5 +1,5 @@
 {
-  "name": "ae_load",
+  "name": "ae_load_dumps",
   "version": "1.0.0",
   "description": "Mit diesen Tool kann man dumps, die mit pouchdb-dump-cli erzeugt wurden, in die Couch laden. Dazu müssen die dumps in den Ordner 'dumps' gelegt werden",
   "main": "index.js",
@@ -12,5 +12,9 @@
     "nano": "6.2.0",
     "pouchdb": "5.2.0",
     "pouchdb-replication-stream": "1.2.6"
+  },
+  "repository": {
+      "type": "git",
+      "url": "git://github.com/barbalex/ae_load_dumps.git"
   }
 }
