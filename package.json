@@ -10,7 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "nano": "6.2.0",
-    "pouchdb": "5.2.0",
+    "pouchdb": "5.2.1",
     "pouchdb-replication-stream": "1.2.6"
   },
   "repository": {
